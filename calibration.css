@@ -1,0 +1,87 @@
+BODY {
+	margin-top: 30px;
+}
+
+.min-answer > INPUT, .max-answer > INPUT {
+	text-align: center;
+}
+
+.correct TD {
+	background-color: #cfc;
+}
+
+.incorrect TD {
+	background-color: #fcc;
+}
+
+.incorrect .correct-answer {
+	color: #600;
+}
+
+.correct .correct-answer {
+	color: #060;
+}
+
+.correct-answer {
+	font-size: larger;
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+.result {
+	text-align: center;
+}
+
+.note {
+	padding: 20px;
+	margin 20px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+}
+
+.note h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.note P:last-child {
+	margin-bottom: 0;
+}
+
+.note-warning {
+	border-left-color: #f93;
+}
+
+.note-warning H4 {
+	color: #f93;
+}
+
+.note-ok {
+	border-left-color: #060;
+}
+
+.note-ok H4 {
+	color: #060;
+}
+
+.source {
+	font-size: smaller;
+	text-align: left !important;
+}
+
+.result-header-source {
+	text-align: left !important;
+}
+
+#jumbotron UL {
+	margin-top: 40px;
+	padding: 0;
+	list-style-type: none;
+	font-size: larger;
+	font-style: italic;
+}
+
+#jumbotron LI > .glyphicon {
+	margin-right: 10px;
+}

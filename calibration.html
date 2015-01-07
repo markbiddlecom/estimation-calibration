@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calibration</title>
+
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="calibration.css">
+	</head>
+	<body>
+		<div class="container">
+			<div id="jumbotron" class="jumbotron">
+				<h1>Estimation Calibration</h1>
+				<p><em>::To be expanded with links and theory and stuff::</em></p>
+				<p>
+					This tool is designed to help you calibrate your estimation biases. Your goal is to be about 90% accurate, which means that you 
+					want to get exactly 9 of each 10 questions correct. Don't try to game the system, as this process can provide you valuable feedback 
+					about how you make educated guesses.
+				</p>
+				<p>
+					You'll be shown ten questions requiring a specific numeric answer. You probably won't know the exact answer, but in some cases 
+					you'll have some domain knowledge that can help you narrow it down, and in some cases you won't. That's totally fine, because 
+					that's how it'll work when you estimate costs for engineering tasks.
+				</p>
+				<p>
+					To answer, guess a minimum and maximum for the correct answer in which you have 90% confidence. Generally speaking, the broader your
+					range, the more confident you are. I can state with 100% confidence that each answer lies in the range [-&infin;, &infin;]. I have 
+					about 0% confidence that every answer will be in the range [0, 1].
+				</p>
+				<p>
+					We're trained to go straight for a single number answer, but don't start there and just add some arbitrary error bars to get to the
+					minimum and maximum, as that's not really a proper measure of your confidence. You may find that for some questions, the difference
+					between your minimum and maximim is a couple of orders of magnitude, while for others it's less than a couple percentage points.
+				</p>
+				<p>
+					You may find it helpful to consider the minimum and maximum guesses separately, trying to avoid having one guess influence the 
+					other. You can do that by, for example, answering all the minimums first and then going back and answering all the maximums. 
+					Experiment and come up with a style that works for you.
+				</p>
+				<p>
+					<button id="btn-get-started" class="btn btn-primary btn-lg">Get started</button>
+				</p>
+				<p>
+					<ul class="references">
+						<li>
+							<span class="glyphicon glyphicon-book"></span>
+							<a target="_blank" href="http://en.wikipedia.org/wiki/Calibrated_probability_assessment">Wikipedia article on calibrated probability assessment</a></li>
+					</ul>
+				</p>
+			</div>
+
+			<div id="questions-container" class="hidden">
+				<form>
+					<p>
+						<div id="overconfident" class="note note-warning hidden">
+							<h4>Overconfident</h4>
+							<p>
+								Your ranges are too precise. Try broadening your guesses a bit in the next round. Remember, your goal is to have just 
+								90% confidence that your guesses are correct, which means that one out of every ten guesses should be wrong.
+							</p>
+						</div>
+						<div id="underconfident" class="note note-warning hidden">
+							<h4>Underconfident</h4>
+							<p>
+								Your ranges are too broad. This is a great way to get all your estimates correct, but it's not very useful for planning 
+								purposes ;)
+							</p>
+							<p>
+								Try narrowing your ranges. It's OK if you get lots of questions wrong the first couple of passes. That's how the 
+								calibration process works!
+							</p>
+						</div>
+						<div id="nice" class="note note-ok hidden">
+							<h4>Sweet Spot</h4>
+							<p>
+								Excellent! That's just about where you need to be. When you say that you're 90% confident in a guess, it has real 
+								statistical meaning :)
+							</p>
+							<p>
+								Try another round of questions and see if you can replicate the result!
+							</p>
+						</div>
+					</p>
+					<p id="actions" class="hidden">
+						<button type="button" id="btn-next" class="btn btn-primary btn-lg">Another!</button>
+					</p>
+					<table id="questions" class="table table-striped">
+					</table>
+					<button type="button" id="btn-score" class="btn btn-primary btn-lg">Score me!</button>
+				</form>
+			</div>
+
+			<div id="all-done" class="hidden jumbotron">
+				<h1>That's all she wrote!</h1>
+				<p>
+					Dang, you've run out of questions to answer. You might want to consider contributing some questions of your own over at the
+					<a href="https://github.com/markbiddlecom/estimation-calibration">GitHub project</a>.
+				</p>
+				<p>
+					You can <a href="calibration.html">refresh this page</a> to start over with the same questions in a different order.
+				</p>
+			</div>
+		</div>
+
+		<table class="hidden">
+			<thead id="questions-header-template">
+				<td></td>
+				<td class="answer"></td>
+				<td class="answer"></td>
+				<td class="result hidden result-header">Your Answer</td>
+				<td class="result hidden result-header">Correct Answer</td>
+				<td class="result hidden result-header result-header-source">Sources</td>
+			</thead>
+			<tr class="question" id="question-template">
+				<td class="question-text"></td>
+				<td class="answer min-answer"><input type="text" class="form-control" placeholder="min"></td>
+				<td class="answer max-answer"><input type="text" class="form-control" placeholder="max"></td>
+				<td class="result hidden">
+					<span class="your-answer"></span>
+				</td>
+				<td class="result hidden">
+					<span class="correct-answer"></span>
+				</td>
+				<td class="result source hidden">
+				</td>
+			</tr>
+		</table>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src="questions.js"></script>
+		<script src="calibration.js"></script>
+	</body>
+</html>
