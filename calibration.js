@@ -55,7 +55,7 @@ $("#btn-next").click(function() {
 
 $(".answer INPUT").blur(function() {
 	var $this = $(this);
-	$this.val($this.val().replace(/\,/, ""));
+	$this.val($this.val().replace(/\,/g, ""));
 
 	if(!isValidNumberString($this.val())) {
 		$this.parent().addClass("has-error");
