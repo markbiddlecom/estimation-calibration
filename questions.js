@@ -251,6 +251,56 @@ function loadQuestions() {
 				"q": "By what percentage did reported Pertussis cases (whooping cough) increase in the US from 2010-2012?",
 				"a": 75.2,
 				"src": "http://www.cdc.gov/pertussis/surv-reporting/cases-by-year.html"
+			},
+			{
+				"q": "In what year did the Woodstock music festival take place?",
+				"a": 1969,
+				"src": "http://en.wikipedia.org/wiki/Woodstock"
+			},
+			{
+				"q": "In 2014, the Chilean resort San Alfonso del Mar was the home of the world's largest swimming pool. How long was it, in meters?",
+				"a": 1013,
+				"src": "http://en.wikipedia.org/wiki/San_Alfonso_del_Mar"
+			},
+			{
+				"q": "On average, the Mississippi river had what percentage the outflow of the Amazon river?",
+				"a": 8,
+				"src": "http://en.wikipedia.org/wiki/Mississippi_River#Outflow"
+			},
+			{
+				"q": "'Little Boy', the atomic device detonated over Hiroshima in WWII, had an estimated yield of 15 kilotons. The Russian 'Tsar Bomba' holds the record for the largest nuclear detonation, with a yield of how many kilotons?",
+				"a": 54000,
+				"src": [ "http://en.wikipedia.org/wiki/Little_Boy", "http://en.wikipedia.org/wiki/Tsar_Bomba" ]
+			},
+			{
+				"q": "What was the total market capitalisation of the New York Stock Exchange in January of 2015, in billions of dollars?",
+				"a": 16613.0,
+				"src": "http://www1.nyse.com/about/listed/nya_characteristics.shtml"
+			},
+			{
+				"q": "In what year was AT&T split into seven smaller companies, known as the 'Baby Bells'?",
+				"a": 1984,
+				"src": "http://en.wikipedia.org/wiki/AT%26T_Corporation#Break-up"
+			},
+			{
+				"q": "In what year was Elon Musk's space transport company, SpaceX, launched?",
+				"a": 2002,
+				"src": "http://www.spacex.com/about"
+			},
+			{
+				"q": "The 85th Academy Awards in 2013 presented 'Oscars' in how many categories?",
+				"a": 24,
+				"src": "http://en.wikipedia.org/wiki/85th_Academy_Awards"
+			},
+			{
+				"q": "The 2012 Tesla Model S electric sedan has an EPA-estimated city fuel efficiency of how many miles per gallon (equivalent)?",
+				"a": 88,
+				"src": "http://www.fueleconomy.gov/feg/Find.do?action=sbs&id=32557"
+			},
+			{
+				"q": "In 2013, Seattle's electric utility produced the sum equivalent of how many Russian Tsar Bombas (the largest nuclear device ever detonated)?",
+				"a": 0.1426,
+				"src": [ "http://www.seattle.gov/light/AboutUs/AnnualReport/2013/2013_Annual_Report.pdf", "http://en.wikipedia.org/wiki/Tsar_bomba" ]
 			}
 		]
 	};
